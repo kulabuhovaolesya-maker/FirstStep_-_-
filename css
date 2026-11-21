@@ -1,0 +1,160 @@
+/* Базові налаштування */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fef6ee; /* Дуже світлий відтінок кремового з палітри */
+  color: #463a52;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Шапка сайту */
+.site-header {
+  background-color: #6c5b7b; /* Темно-сливовий (2-й колір) */
+  color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.site-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: #fddcb9; /* Світло-кремовий (6-й колір) */
+}
+
+.intro {
+  max-width: 650px;
+  margin: 0 auto 24px auto;
+  font-size: 1.05rem;
+  color: #e6e4ee;
+}
+
+/* Сітка карток */
+.vacancies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding-bottom: 50px;
+  align-items: start;
+}
+
+/* Оформлення картки */
+.vacancy-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(108, 91, 123, 0.12);
+  border-top: 5px solid #a33b28; /* Теракотово-цегляний (3-й колір) */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Виділення назви вакансії */
+.vacancy-title {
+  font-size: 1.35rem;
+  color: #6c5b7b; /* Темно-сливовий (2-й колір) */
+  margin-bottom: 16px;
+}
+
+/* Виділення оплати та графіку для швидкого порівняння */
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.salary {
+  background-color: #f9b8a2; /* Персиковий (5-й колір) */
+  color: #6b2215;
+}
+
+.schedule {
+  background-color: #fddcb9; /* Кремовий (6-й колір) */
+  color: #5c4632;
+}
+
+.location,
+.duties {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #463a52;
+}
+
+/* Кнопки */
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e2ec;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Головна кнопка "Показати всі вакансії" */
+.btn-primary {
+  background-color: #f26a44; /* Яскравий коралово-помаранчевий (4-й колір) */
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #dc5833;
+}
+
+/* Кнопки деталей */
+.btn-secondary {
+  background-color: #a7a4bc; /* Приглушений лавандовий (1-й колір) */
+  color: #ffffff;
+  flex: 1;
+}
+
+.btn-secondary:hover {
+  background-color: #8f8ba8;
+}
+
+/* Кнопка "Приховати вакансію" */
+.btn-danger {
+  background-color: #a33b28; /* Теракотово-цегляний (3-й колір) */
+  color: #ffffff;
+  width: 100%;
+}
+
+.btn-danger:hover {
+  background-color: #862e1e;
+}

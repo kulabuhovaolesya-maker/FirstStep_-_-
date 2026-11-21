@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FirstStep — Перша робота для старшокласників</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>FirstStep</h1>
+      <p class="intro">
+        Твій перший крок до фінансової незалежності. Переглядай перевірені вакансії для старшокласників, 
+        порівнюй графік та оплату, а також приховуй варіанти, які тобі не підходять.
+      </p>
+      <button id="show-all-btn" class="btn btn-primary" onclick="showAllVacancies()">
+        Показати всі вакансії
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="vacancies-grid">
+
+      <!-- Вакансія 1 -->
+      <article id="card-1" class="vacancy-card">
+        <h2 class="vacancy-title">Бариста-стажер у кав’ярню</h2>
+        <div id="details-1" class="vacancy-details">
+          <div class="highlights">
+            <span class="badge salary">Оплата: 135 грн/год + чайові</span>
+            <span class="badge schedule">Графік: гнучкий (від 4 год після школи)</span>
+          </div>
+          <p class="location"><strong>Місце роботи:</strong> вул. Соборна, 15 (центр міста)</p>
+          <p class="duties">
+            <strong>Обов’язки:</strong> приготування кавових напоїв та лимонадів, спілкування з гостями, 
+            підтримання чистоти за барною стійкою. Навчаємо з нуля за 3 дні.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="collapseDetails('details-1')">Згорнути деталі</button>
+          <button class="btn btn-secondary" onclick="expandDetails('details-1')">Показати деталі</button>
+          <button class="btn btn-danger" onclick="hideVacancy('card-1')">Приховати вакансію</button>
+        </div>
+      </article>
+
+      <!-- Вакансія 2 -->
+      <article id="card-2" class="vacancy-card">
+        <h2 class="vacancy-title">Помічник адміністратора в коворкінг</h2>
+        <div id="details-2" class="vacancy-details">
+          <div class="highlights">
+            <span class="badge salary">Оплата: 9 200 грн/міс</span>
+            <span class="badge schedule">Графік: Пн–Пт (16:00 – 20:00)</span>
+          </div>
+          <p class="location"><strong>Місце роботи:</strong> бізнес-центр «Оріон», 3 поверх</p>
+          <p class="duties">
+            <strong>Обов’язки:</strong> зустріч відвідувачів, реєстрація гостей, допомога в організації 
+            вечірніх лекцій та майстер-класів, контроль наявності кави та снеків.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="collapseDetails('details-2')">Згорнути деталі</button>
+          <button class="btn btn-secondary" onclick="expandDetails('details-2')">Показати деталі</button>
+          <button class="btn btn-danger" onclick="hideVacancy('card-2')">Приховати вакансію</button>
+        </div>
+      </article>
+
+      <!-- Вакансія 3 -->
+      <article id="card-3" class="vacancy-card">
+        <h2 class="vacancy-title">Контент-мейкер для TikTok та Reels</h2>
+        <div id="details-3" class="vacancy-details">
+          <div class="highlights">
+            <span class="badge salary">Оплата: 450 грн за змонтоване відео</span>
+            <span class="badge schedule">Графік: вільний (віддалено)</span>
+          </div>
+          <p class="location"><strong>Місце роботи:</strong> онлайн / локальний магазин одягу</p>
+          <p class="duties">
+            <strong>Обов’язки:</strong> пошук трендів, зйомка коротких оглядів новинок 2 рази на тиждень, 
+            динамічний монтаж у CapCut та додавання субтитрів.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="collapseDetails('details-3')">Згорнути деталі</button>
+          <button class="btn btn-secondary" onclick="expandDetails('details-3')">Показати деталі</button>
+          <button class="btn btn-danger" onclick="hideVacancy('card-3')">Приховати вакансію</button>
+        </div>
+      </article>
+
+      <!-- Вакансія 4 -->
+      <article id="card-4" class="vacancy-card">
+        <h2 class="vacancy-title">Піший кур’єр доставки</h2>
+        <div id="details-4" class="vacancy-details">
+          <div class="highlights">
+            <span class="badge salary">Оплата: 160–190 грн/год</span>
+            <span class="badge schedule">Графік: вихідні або вечірні зміни (3–5 год)</span>
+          </div>
+          <p class="location"><strong>Місце роботи:</strong> у межах обраного району міста</p>
+          <p class="duties">
+            <strong>Обов’язки:</strong> доставка невеликих замовлень із ресторанів та аптек за допомогою 
+            мобільного додатку. Термосумку надаємо безкоштовно.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="collapseDetails('details-4')">Згорнути деталі</button>
+          <button class="btn btn-secondary" onclick="expandDetails('details-4')">Показати деталі</button>
+          <button class="btn btn-danger" onclick="hideVacancy('card-4')">Приховати вакансію</button>
+        </div>
+      </article>
+
+      <!-- Вакансія 5 -->
+      <article id="card-5" class="vacancy-card">
+        <h2 class="vacancy-title">Аніматор у дитячий розважальний центр</h2>
+        <div id="details-5" class="vacancy-details">
+          <div class="highlights">
+            <span class="badge salary">Оплата: 240 грн/год</span>
+            <span class="badge schedule">Графік: Сб–Нд (11:00 – 18:00)</span>
+          </div>
+          <p class="location"><strong>Місце роботи:</strong> ТРЦ «Мегаполіс», 2 поверх</p>
+          <p class="duties">
+            <strong>Обов’язки:</strong> проведення веселих ігор, квестів та конкурсів для дітей 5–10 років, 
+            допомога у проведенні днів народження.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="collapseDetails('details-5')">Згорнути деталі</button>
+          <button class="btn btn-secondary" onclick="expandDetails('details-5')">Показати деталі</button>
+          <button class="btn btn-danger" onclick="hideVacancy('card-5')">Приховати вакансію</button>
+        </div>
+      </article>
+
+<!-- Вакансія 6 -->
+      <article id="card-6" class="vacancy-card">
+        <h2 class="vacancy-title">Репетитор з англійської для молодших класів</h2>
+        <div id="details-6" class="vacancy-details">
+          <div class="highlights">
+            <span class="badge salary">Оплата: 300 грн за заняття (45 хв)</span>
+            <span class="badge schedule">Графік: 3–4 рази на тиждень після 16:00</span>
+          </div>
+          <p class="location"><strong>Місце роботи:</strong> дистанційно (Zoom / Google Meet)</p>
+          <p class="duties">
+            <strong>Обов’язки:</strong> допомога учням 1–4 класів із домашніми завданнями, вивчення нових слів 
+            в ігровій формі. Потрібен рівень англійської від B1.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="collapseDetails('details-6')">Згорнути деталі</button>
+          <button class="btn btn-secondary" onclick="expandDetails('details-6')">Показати деталі</button>
+          <button class="btn btn-danger" onclick="hideVacancy('card-6')">Приховати вакансію</button>
+        </div>
+      </article>
+
+      <!-- Вакансія 7 -->
+      <article id="card-7" class="vacancy-card">
+        <h2 class="vacancy-title">Вигулювач собак (догсіттер)</h2>
+        <div id="details-7" class="vacancy-details">
+          <div class="highlights">
+            <span class="badge salary">Оплата: 180 грн за прогулянку (1 год)</span>
+            <span class="badge schedule">Графік: гнучкий (ранок або вечір)</span>
+          </div>
+          <p class="location"><strong>Місце роботи:</strong> парк ім. Шевченка та сусідні двори</p>
+          <p class="duties">
+            <strong>Обов’язки:</strong> активний вигул собак дрібних і середніх порід за графіком власника, 
+            миття лап після прогулянки та фотозвіт господарю.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="collapseDetails('details-7')">Згорнути деталі</button>
+          <button class="btn btn-secondary" onclick="expandDetails('details-7')">Показати деталі</button>
+          <button class="btn btn-danger" onclick="hideVacancy('card-7')">Приховати вакансію</button>
+        </div>
+      </article>
+
+      <!-- Вакансія 8 -->
+      <article id="card-8" class="vacancy-card">
+        <h2 class="vacancy-title">Консультант у книгарню</h2>
+        <div id="details-8" class="vacancy-details">
+          <div class="highlights">
+            <span class="badge salary">Оплата: 8 400 грн/міс + знижка на книги</span>
+            <span class="badge schedule">Графік: Пн, Ср, Пт (15:30 – 19:30)</span>
+          </div>
+          <p class="location"><strong>Місце роботи:</strong> просп. Науки, 24</p>
+          <p class="duties">
+            <strong>Обов’язки:</strong> викладка нових надходжень на полиці, допомога покупцям у виборі 
+            художньої літератури та коміксів, наклеювання цінників.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="collapseDetails('details-8')">Згорнути деталі</button>
+          <button class="btn btn-secondary" onclick="expandDetails('details-8')">Показати деталі</button>
+          <button class="btn btn-danger" onclick="hideVacancy('card-8')">Приховати вакансію</button>
+        </div>
+      </article>
+
+      <!-- Вакансія 9 -->
+      <article id="card-9" class="vacancy-card">
+        <h2 class="vacancy-title">Тестувальник мобільних ігор (Junior QA)</h2>
+        <div id="details-9" class="vacancy-details">
+          <div class="highlights">
+            <span class="badge salary">Оплата: 175 грн/год</span>
+            <span class="badge schedule">Графік: віддалено (від 10 год на тиждень)</span>
+          </div>
+          <p class="location"><strong>Місце роботи:</strong> онлайн (потрібен смартфон на Android або iOS)</p>
+          <p class="duties">
+            <strong>Обов’язки:</strong> проходження нових рівнів у казуальних іграх, пошук графічних багів 
+            та помилок перекладу, заповнення простих звітів у Google Таблицях.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-secondary" onclick="collapseDetails('details-9')">Згорнути деталі</button>
+          <button class="btn btn-secondary" onclick="expandDetails('details-9')">Показати деталі</button>
+          <button class="btn btn-danger" onclick="hideVacancy('card-9')">Приховати вакансію</button>
+        </div>
+      </article>
